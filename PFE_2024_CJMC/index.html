@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Estimación de Calorías Quemadas</title>
+</head>
+<body class="container mt-5">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Calculadora de calorías quemadas</h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Instrucciones</h5>
+            <p class="card-text">Estimad@s: Aquí se le presenta una calculadora para ver calorías quemadas dependiendo la actividad física.</p>
+            <p class="card-text">La fórmula para el cálculo corresponde a:</p>
+            <p>Calorías = MET * 3.5 * peso (kg) * (tiempo en minutos / 200)</p>
+            <hr />
+            <p class="card-text">Los valores de MET son:</p>
+            <ul>
+                <li class="card-text">Caminar = 3.5 MET</li>
+                <li class="card-text">Correr = 8.0 MET</li>
+            </ul>
+            <hr />
+            <p class="card-text">Valide que: el peso esté entre 1 y 120 kg, y el tiempo entre 5 y 150 minutos. Elija la actividad a realizar.</p>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <form id="formulario-calorias">
+                <div class="mb-3">
+                    <label for="peso" class="form-label">Peso (Kg)</label>
+                    <input type="number" class="form-control" id="peso" placeholder="Ej: 70" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tiempo" class="form-label">Tiempo (minutos)</label>
+                    <input type="number" class="form-control" id="tiempo" placeholder="Ej: 30" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Actividad</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="actividad" id="caminar" value="3.5" checked>
+                        <label class="form-check-label" for="caminar">Caminar (3.5 MET)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="actividad" id="correr" value="8.0">
+                        <label class="form-check-label" for="correr">Correr (8.0 MET)</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Enviar formulario</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-info mt-3" id="resultado" role="alert">
+        Esperando el cálculo ...
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
